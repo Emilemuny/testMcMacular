@@ -1,6 +1,6 @@
 .row
   .col-md-4
-    form
+    form(ng-if='!name')
       .form-group 
         label(for='mass') Mass
         input#mass.form-control(type='number', placeholder='Mass in Kg.', ng-model='body.mass')

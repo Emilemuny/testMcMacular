@@ -1,8 +1,17 @@
 'use strict';
 
 angular.module('angular-prototype')
-  .controller('bodyCtrl', ['$scope', function($scope){
-      $scope.show = 0;
+  .controller('bodyCtrl', ['$scope', '$state', '$rootScope', function($scope, $state, $rootScope){
+
+      if(typeof $rootScope.email === 'undefined'){
+      $state.go('login');
+    }
+
+    console.log('logged in email', $rootScope.email);
+
+
+
+    $scope.show = 0;
     $scope.submit = function(body){
       var bmi = body.mass / (body.height * body.height);
       $scope.answer = bmi.toFixed(2);

@@ -1,0 +1,18 @@
+.row
+  .col-md-4
+    form
+      .form-group 
+        label(for='mass') Mass
+        input#mass.form-control(type='number', placeholder='Mass in Kg.', ng-model='body.mass')
+          
+        label(for='height') Height
+        input#weight.form-control(type='float', placeholder='Height in Meters.', ng-model='body.height') 
+        
+        button.btn.btn-default(type='submit', ng-click='submit(body)', ng-init=('bmi') ) Submit
+        
+        h4(ng-if='show == 1') Your Body Mass Index(BMI) is: {{answer}} , {{overorunder}}
+        
+        
+      
+    
+      
